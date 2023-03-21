@@ -1,0 +1,24 @@
+public enum PlayerControlMode
+{
+	Normal,
+	Dead,
+	StartingFire,
+	Struggle,
+	PlaceMesh,
+	PlaceMeshPending,
+	InVehicle,
+	InSnowShelter,
+	InSeat,
+	Climbing,
+	DeployRope,
+	TakeRope,
+	InConversation,
+	Locked,
+	ScrapMetalStruggle,
+	BigCarry,
+	InFPCinematic,
+	BearSpear,
+	AimRevolver,
+	PlaceDecal,
+	InElevator
+}

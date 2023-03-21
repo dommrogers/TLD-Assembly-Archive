@@ -1,0 +1,144 @@
+using System;
+using Cpp2ILInjected.CallAnalysis;
+using TLD.GameplayTags;
+using UnityEngine;
+
+public class StartSettings : MonoBehaviour
+{
+	public bool m_RandomSpawning;
+
+	public bool m_RandomWeather;
+
+	public bool m_RandomTimeOfDay;
+
+	public bool m_LockWeather;
+
+	public bool m_LockTimeOfDay;
+
+	public WeatherStage m_LockedWeather;
+
+	public string m_LockedTimeOfDay;
+
+	public int m_WeatherClearWeight;
+
+	public int m_WeatherCloudyWeight;
+
+	public int m_WeatherLightSnowWeight;
+
+	public int m_WeatherHeavySnowWeight;
+
+	public int m_WeatherBlizzardWeight;
+
+	public int m_WeatherLightFogWeight;
+
+	public int m_WeatherDenseFogWeight;
+
+	public int m_WeatherElectrostaticFogWeight;
+
+	public int m_TimeOfDayDawnWeight;
+
+	public int m_TimeOfDayMorningWeight;
+
+	public int m_TimeOfDayAfternoonWeight;
+
+	public int m_TimeOfDayDuskWeight;
+
+	public int m_TimeOfDayNightWeight;
+
+	public GameplayTag m_ForceMorningStartTag;
+
+	private int[] m_WeatherWeights;
+
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
+	public void Start()
+	{
+	}
+
+	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 35)]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	public string PickRandomSpawnPointName()
+	{
+		return null;
+	}
+
+	[CallerCount(Count = 0)]
+	public bool ShouldSetWeather()
+	{
+		return default(bool);
+	}
+
+	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
+	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ChooseNextWeatherSet")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	public void SetWeather()
+	{
+	}
+
+	[Calls(Type = typeof(WeatherTransition), Member = "ChooseNextWeatherSet")]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 3)]
+	private void SetRandomWeather()
+	{
+	}
+
+	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
+	private void SetLockedWeather()
+	{
+	}
+
+	[CallerCount(Count = 0)]
+	public bool ShouldSetTime()
+	{
+		return default(bool);
+	}
+
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
+	[CallAnalysisFailed]
+	[CallerCount(Count = 2)]
+	public void SetTime()
+	{
+	}
+
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[CallsUnknownMethods(Count = 11)]
+	private void SetRandomTime()
+	{
+	}
+
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "TryParseTOD")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[CallsUnknownMethods(Count = 3)]
+	private void SetLockedTime()
+	{
+	}
+
+	[CallerCount(Count = 12)]
+	[DeduplicatedMethod]
+	public StartSettings()
+	{
+	}
+}

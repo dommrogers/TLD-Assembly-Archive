@@ -1,0 +1,22 @@
+using Cpp2ILInjected.CallAnalysis;
+
+public class BadgeInfo
+{
+	public string m_SpriteName;
+
+	public string m_NameLocID;
+
+	public string m_Desc;
+
+	public bool m_Unlocked;
+
+	public float m_NormalizedProgress;
+
+	public string m_Benefit;
+
+	[CallerCount(Count = 2)]
+	[DeduplicatedMethod]
+	public BadgeInfo()
+	{
+	}
+}

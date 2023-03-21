@@ -1,0 +1,23 @@
+using Cpp2ILInjected.CallAnalysis;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
+
+internal struct ElectrolizerParallelJob : IJobParallelFor
+{
+	public NativeArray<float4> m_PosArr;
+
+	public float4 m_CamPos;
+
+	public NativeArray<float> m_MaxDistSqr;
+
+	public NativeArray<float> m_DistSqr;
+
+	public NativeArray<byte> m_EnabledArr;
+
+	[CallerCount(Count = 1)]
+	[CalledBy(Type = typeof(IJobParallelForExtensions.ParallelForJobStruct<>), Member = "Execute")]
+	public void Execute(int i)
+	{
+	}
+}

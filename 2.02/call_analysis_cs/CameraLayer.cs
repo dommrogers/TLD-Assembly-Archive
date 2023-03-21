@@ -1,0 +1,30 @@
+using Cpp2ILInjected.CallAnalysis;
+using UnityEngine;
+
+public class CameraLayer : StateMachineBehaviour
+{
+	private PlayerAnimation.CameraLayer m_Layer;
+
+	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	{
+	}
+
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
+	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	{
+	}
+
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	public CameraLayer()
+	{
+	}
+}

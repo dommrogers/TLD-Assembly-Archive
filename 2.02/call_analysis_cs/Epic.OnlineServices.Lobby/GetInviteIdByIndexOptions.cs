@@ -1,0 +1,51 @@
+using System.Runtime.CompilerServices;
+using Cpp2ILInjected.CallAnalysis;
+
+namespace Epic.OnlineServices.Lobby;
+
+public class GetInviteIdByIndexOptions
+{
+	private ProductUserId _003CLocalUserId_003Ek__BackingField;
+
+	private uint _003CIndex_003Ek__BackingField;
+
+	public ProductUserId LocalUserId
+	{
+		[DeduplicatedMethod]
+		[CallerCount(Count = 52)]
+		[CompilerGenerated]
+		get
+		{
+			return null;
+		}
+		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 101)]
+		set
+		{
+		}
+	}
+
+	public uint Index
+	{
+		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 8)]
+		get
+		{
+			return default(uint);
+		}
+		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		set
+		{
+		}
+	}
+
+	[DeduplicatedMethod]
+	[CallerCount(Count = 2)]
+	public GetInviteIdByIndexOptions()
+	{
+	}
+}

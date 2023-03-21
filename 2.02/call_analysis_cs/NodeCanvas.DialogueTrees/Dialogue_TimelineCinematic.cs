@@ -1,0 +1,51 @@
+using Cpp2ILInjected.CallAnalysis;
+using NodeCanvas.Framework;
+using UnityEngine;
+
+namespace NodeCanvas.DialogueTrees;
+
+public class Dialogue_TimelineCinematic : DTNode
+{
+	public DialogueTimelineScript m_DialogueTimelineScript;
+
+	public string m_DebugDialogueTimelineScriptName;
+
+	public override string name
+	{
+		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		get
+		{
+			return null;
+		}
+	}
+
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnTimelinePlay")]
+	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
+	[CallsUnknownMethods(Count = 11)]
+	protected override Status OnExecute(Component agent, IBlackboard bb)
+	{
+		return default(Status);
+	}
+
+	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	private void OnCinematicFinish()
+	{
+	}
+
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DTNode), Member = ".ctor")]
+	public Dialogue_TimelineCinematic()
+	{
+	}
+}

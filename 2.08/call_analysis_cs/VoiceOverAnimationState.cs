@@ -1,0 +1,9 @@
+public enum VoiceOverAnimationState
+{
+	IDLE,
+	ANGRY,
+	CONCERNED,
+	HAPPY,
+	GESTURE_CONFUSED,
+	GESTURE_LOOK_DOWN_HEAD_SHAKE
+}

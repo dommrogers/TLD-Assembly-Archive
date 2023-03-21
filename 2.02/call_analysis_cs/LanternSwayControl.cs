@@ -1,0 +1,52 @@
+using Cpp2ILInjected.CallAnalysis;
+using UnityEngine;
+
+public class LanternSwayControl : StateMachineBehaviour
+{
+	public float m_SecondsToDamp;
+
+	private SoftJointLimit m_AngularLimitY;
+
+	private SoftJointLimit m_AngularLimitZ;
+
+	private ConfigurableJoint m_ConfigurableJoint;
+
+	private float m_StartTime;
+
+	private float m_StartAngularLimitY;
+
+	private float m_StartAngularLimitZ;
+
+	public float m_TargetAngularLimitY;
+
+	public float m_TargetAngularLimitZ;
+
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 13)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponFromID")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallerCount(Count = 0)]
+	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	{
+	}
+
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsUnknownMethods(Count = 5)]
+	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	{
+	}
+
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	public LanternSwayControl()
+	{
+	}
+}

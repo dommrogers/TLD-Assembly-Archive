@@ -1,0 +1,9 @@
+public enum SaveSlotType
+{
+	UNKNOWN,
+	CHALLENGE,
+	CHECKPOINT,
+	SANDBOX,
+	STORY,
+	AUTOSAVE
+}

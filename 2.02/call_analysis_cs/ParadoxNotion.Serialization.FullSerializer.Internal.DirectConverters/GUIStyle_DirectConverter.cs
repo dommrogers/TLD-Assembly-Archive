@@ -1,0 +1,127 @@
+using System;
+using System.Collections.Generic;
+using Cpp2ILInjected.CallAnalysis;
+using UnityEngine;
+
+namespace ParadoxNotion.Serialization.FullSerializer.Internal.DirectConverters;
+
+public class GUIStyle_DirectConverter : fsDirectConverter<GUIStyle>
+{
+	[Calls(Type = typeof(GUIStyle), Member = "get_onNormal")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_normal")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_onActive")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_onFocused")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_onHover")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_overflow")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_padding")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[CallsUnknownMethods(Count = 24)]
+	[Calls(Type = typeof(GUIStyle), Member = "get_name")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 34)]
+	[Calls(Type = typeof(GUIStyle), Member = "get_active")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_border")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_margin")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(fsSerializer), Member = "TrySerialize")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_focused")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_hover")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	protected override fsResult DoSerialize(GUIStyle model, Dictionary<string, fsData> serialized)
+	{
+		return default(fsResult);
+	}
+
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_onHover")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_onActive")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_normal")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_onNormal")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_onFocused")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "set_overflow")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_padding")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "set_padding")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[CallsUnknownMethods(Count = 98)]
+	[Calls(Type = typeof(GUIStyle), Member = "set_name")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_overflow")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_focused")]
+	[Calls(Type = typeof(GUIStyle), Member = "set_margin")]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 57)]
+	[Calls(Type = typeof(GUIStyle), Member = "get_active")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_border")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "set_border")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_hover")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_margin")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_name")]
+	protected override fsResult DoDeserialize(Dictionary<string, fsData> data, ref GUIStyle model)
+	{
+		return default(fsResult);
+	}
+
+	[CallsUnknownMethods(Count = 7)]
+	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	public override object CreateInstance(fsData data, Type storageType)
+	{
+		return null;
+	}
+
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
+	public GUIStyle_DirectConverter()
+	{
+		((fsDirectConverter<>)(object)this)._002Ector();
+	}
+}
