@@ -1,5 +1,9 @@
 # TLD-Assembly-Archive
 
+[Diff Report List](https://dommrogers.github.io/TLD-Assembly-Archive/)
+
+Still a WIP, needs refinement.
+
 ## usage
 cmd> get.bat $version $manifest $steamusername $steampassword $force(Y/N)
 <br>or
@@ -9,8 +13,7 @@ $force = "Y" will forcively remove old folder and rebuild the version from scrat
 
 ## requires
 dotnet tool install ilspycmd -g
-### to-do / coming soon ™
-version diff comparisons
+
 
 ---
 ### uses
