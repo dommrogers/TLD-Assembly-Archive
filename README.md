@@ -1,9 +1,12 @@
 # TLD-Assembly-Archive
 
 ## usage
-Change the **archive-folder** variable in get.bat
+cmd> get.bat $version $manifest $steamusername $steampassword $force(Y/N)
+<br>or
+<br>cmd> get_all.bat
 
-cmd> get.bat $version $manifest $steamusername
+$force = "Y" will forcively remove old folder and rebuild the version from scratch
+
 ## requires
 dotnet tool install ilspycmd -g
 ### to-do / coming soon ™
